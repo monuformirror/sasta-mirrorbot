@@ -15,13 +15,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Download
+      - name: Anu
         uses: NFS86/mirrorer@main
+
+      - name: Download
         run: |
           mega-login $USERNAME $PASSWORD
           mega-get ${LINK} $PWD
 
       - name: Upload
-        uses: NFS86/mirrorer@main
         run: |
           rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.apk NFS:Game/aduhai -P
