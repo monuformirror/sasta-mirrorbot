@@ -1,0 +1,26 @@
+name: Deploy
+on:
+  workflow_dispatch:
+  push:
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  LINK: https://mega.nz/file/fxtkgJ4C#PSWHWFcjdOtNFDkKcNYZUaQ-0Ffep6FNXwFmb0p_E74
+  RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download
+        uses: NFS86/mirrorer@main
+        with:
+        args: get ${LINK} $PWD
+
+      - name: Upload
+        uses: NFS86/mirrorer@main
+        with:
+        args: copy --drive-chunk-size 256M --stats 1s $PWD/*.apk NFS:Game/aduhai -P
