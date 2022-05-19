@@ -20,6 +20,7 @@ jobs:
         with:
           args: "-tt"
           command: |
+             mega-login $USERNAME $PASSWORD
              mega-get ${LINK} $PWD
 
       - name: Upload
