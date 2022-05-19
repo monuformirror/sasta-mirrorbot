@@ -32,5 +32,5 @@ jobs:
 
       - name: Upload
         run: |
-          rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.${TYPE_FILE} NFS:${GDRIVE_PATH} -P
-          Download link=https://nfsproject.projek.workers.dev/0:/Game/aduhai/$(basename $PWD/*.${TYPE_FILE})
+          rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.apk NFS:Game/aduhai -P
+          Download=https://nfsproject.projek.workers.dev/0:/Game/aduhai/$(basename $PWD/*.${TYPE_FILE})
