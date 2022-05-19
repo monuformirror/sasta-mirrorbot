@@ -32,5 +32,6 @@ jobs:
 
       - name: Upload
         run: |
-          rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.apk NFS:aduhai -P
-          Download=https://nfsproject.projek.workers.dev/1:/aduhai/$(basename $PWD/*.${TYPE_FILE})
+          rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.apk NFS: -P
+          LINK_MIRROR=https://nfsproject.projek.workers.dev/1:/$(basename $PWD/*.${TYPE_FILE})
+          echo Download: ${LINK_MIRROR}
