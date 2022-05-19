@@ -2,6 +2,7 @@ name: Deploy
 on:
   workflow_dispatch:
   push:
+     branches: [ main ]
 
 defaults:
   run:
@@ -11,11 +12,11 @@ env:
   LINK: https://mega.nz/file/fxtkgJ4C#PSWHWFcjdOtNFDkKcNYZUaQ-0Ffep6FNXwFmb0p_E74
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
   TYPE_FILE: apk
-  GDRIVE_PATH: Game/aduhai
 
 jobs:
   process:
     runs-on: ubuntu-latest
+    if: github.actor == 'NFS86'
     container:
       image: anggit86/docker:mirrorer
 
@@ -32,6 +33,9 @@ jobs:
 
       - name: Upload
         run: |
-          rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.apk NFS: -P
+          rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.${TYPE_FILE} NFS: -P
+
+      - name: Link Download
+        run: |
           LINK_MIRROR=https://nfsproject.projek.workers.dev/1:/$(basename $PWD/*.${TYPE_FILE})
-          echo Download: ${LINK_MIRROR}
+          echo ${LINK_MIRROR}
