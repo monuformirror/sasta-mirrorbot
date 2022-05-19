@@ -18,6 +18,11 @@ jobs:
       image: anggit86/docker:mirrorer
 
     steps:
+      - name: setup config drive
+        run: |
+          mkdir -p ~/.config/rclone
+          echo "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
+
       - name: Download
         run: |
           mega-get ${LINK} $PWD
