@@ -17,15 +17,11 @@ jobs:
     steps:
       - name: Download
         uses: NFS86/mirrorer@main
-        with:
-          args: "-tt"
-          command: |
-             mega-login $USERNAME $PASSWORD
-             mega-get ${LINK} $PWD
+        run: |
+          mega-login $USERNAME $PASSWORD
+          mega-get ${LINK} $PWD
 
       - name: Upload
         uses: NFS86/mirrorer@main
-        with:
-          args: "-tt"
-          command: |
-             rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.apk NFS:Game/aduhai -P
+        run: |
+          rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.apk NFS:Game/aduhai -P
