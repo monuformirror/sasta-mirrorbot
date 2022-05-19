@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-set -e
+set -eu
 
 bash -c  "nohup tail -f /root/.megaCmd/megacmdserver.log >&0 2>1" &
 if [[ "$USERNAME" != "NOBODY" ]] && [[ "$PASSWORD" != "CHANGEME" ]]; then
