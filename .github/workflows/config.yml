@@ -14,10 +14,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: anggit86/docker:mirrorer
     steps:
-      - name: Anu
-        uses: NFS86/mirrorer@main
-
       - name: Download
         run: |
           mega-login $USERNAME $PASSWORD
