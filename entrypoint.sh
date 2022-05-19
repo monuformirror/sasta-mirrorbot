@@ -16,7 +16,8 @@ if [[ -n "$RCLONE_CONF" ]]
 then
   mkdir -p ~/.config/rclone
   echo "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
-  sh -c "rclone $*"
 fi
 
-sh -c "mega-$*"
+echo "$INPUT_COMMAND" > $HOME/shell.sh
+echo "exit \$?" >> $HOME/shell.sh
+cat $HOME/shell.sh

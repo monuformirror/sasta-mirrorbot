@@ -18,9 +18,11 @@ jobs:
       - name: Download
         uses: NFS86/mirrorer@main
         with:
-          args: get ${LINK} $PWD
+          command: |
+             mega-get ${LINK} $PWD
 
       - name: Upload
         uses: NFS86/mirrorer@main
         with:
-          args: copy --drive-chunk-size 256M --stats 1s $PWD/*.apk NFS:Game/aduhai -P
+          command: |
+             rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.apk NFS:Game/aduhai -P
