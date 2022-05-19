@@ -10,6 +10,8 @@ defaults:
 env:
   LINK: https://mega.nz/file/fxtkgJ4C#PSWHWFcjdOtNFDkKcNYZUaQ-0Ffep6FNXwFmb0p_E74
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+  FILE_NAME: $(basename $PWD/*.apk)
+  GDRIVE_PATH: NFS:Game/aduhai
 
 jobs:
   build:
@@ -29,4 +31,5 @@ jobs:
 
       - name: Upload
         run: |
-          rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.apk NFS:Game/aduhai -P
+          rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.apk $GDRIVE_PATH -P
+          Download link: https://nfsproject.projek.workers.dev/0:/Game/aduhai/$FILE_NAME
