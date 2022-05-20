@@ -17,7 +17,8 @@ env:
   GAME_TYPE_ANDROID: Android
 
 jobs:
-  Android mirrorer:
+  deploy-android:
+    name: Android Mirrorer
     runs-on: ubuntu-latest
     if: github.actor == 'NFS86'
     container:
