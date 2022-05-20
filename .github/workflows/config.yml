@@ -52,8 +52,8 @@ jobs:
           🚀 Name: <code>$(cd $HOME && ls *apk -m1 | cut -d . -f 1-2)</code>
           🔥 Jenis File: <code>${TYPE_FILE_ANDROID}</code>
           🧨 Game Type: <code>${GAME_TYPE_ANDROID}</code>
-         🔗 Download Link: <a href=\"${LINK}\">Here</a>
-         📅 Date: <code>$(date +%d\ %B\ %Y)</code>
-         🕔 Time Zone: <code>$(date +%T) WIB</code>"
-         TG_TEXT="${TXT_CAPTION}"
-         telegram_message "$TG_TEXT"
+          🔗 Download Link: <a href=\"${LINK}\">Here</a>
+          📅 Date: <code>$(date +%d\ %B\ %Y)</code>
+          🕔 Time Zone: <code>$(date +%T) WIB</code>"
+          TG_TEXT="${TXT_CAPTION}"
+          telegram_message "$TG_TEXT"
