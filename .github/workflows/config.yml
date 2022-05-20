@@ -31,7 +31,7 @@ jobs:
 
       - name: Download
         run: |
-          mega-get ${LINK} $PWD |& tee -a download.log || true
+          mega-get ${LINK} $PWD |& tee -a download.log
           curl -F document=@download.log "https://api.telegram.org/bot${TG_TOKEN}/sendDocument" -F chat_id="${TG_ID}" -F "disable_web_page_preview=true" -F "parse_mode=html"
 
       - name: Upload
