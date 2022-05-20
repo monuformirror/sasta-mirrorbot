@@ -42,6 +42,7 @@ jobs:
       - name: Link Download
         run: |
           LINK_MIRROR=https://nfsproject.projek.workers.dev/1:/$(basename $PWD/*.${TYPE_FILE_ANDROID})
+          export TZ=Asia/Jakarta
           telegram_message() {
                curl -s -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
                -d chat_id="${TG_ID}" \
@@ -55,6 +56,6 @@ jobs:
           🧨 Game Type: <code>${GAME_TYPE_ANDROID}</code>
           🔗 Download Link: <a href=\"${LINK_MIRROR}\">Here</a>
           📅 Date: <code>$(date +%d\ %B\ %Y)</code>
-          🕔 Time Zone: <code>$(date +%T) WIB</code>"
+          🕔 Time Zone: <code>$(date +%T)</code>"
           TG_TEXT="${TXT_CAPTION}"
           telegram_message "$TG_TEXT"
