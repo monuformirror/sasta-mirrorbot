@@ -35,11 +35,13 @@ jobs:
 
       - name: Upload
         run: |
-          ls -al
-          curl -F document=@download.log "https://api.telegram.org/bot${TG_TOKEN}/sendDocument" -F chat_id="${TG_ID}" -F "disable_web_page_preview=true" -F "parse_mode=html"
           rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.${TYPE_FILE} NFS: -P
 
       - name: Link Download
         run: |
           LINK_MIRROR=https://nfsproject.projek.workers.dev/1:/$(basename $PWD/*.${TYPE_FILE})
+          echo
+          lolcat Download Link
+          echo ========================================
           echo ${LINK_MIRROR}
+          echo ========================================
