@@ -41,7 +41,8 @@ jobs:
         run: |
           LINK_MIRROR=https://nfsproject.projek.workers.dev/1:/$(basename $PWD/*.${TYPE_FILE})
           echo
-          lolcat Download Link
+          echo
+          echo Download Link
           echo ========================================
           echo ${LINK_MIRROR}
           echo ========================================
