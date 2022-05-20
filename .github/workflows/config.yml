@@ -50,10 +50,10 @@ jobs:
           }
           TXT_CAPTION="✅Mirrorer Successfully!
           
-          🚀 Name: <code>$(cd $HOME && ls *apk -m1 | cut -d . -f 1-2)</code>
+          🚀 Name: <code>$(cd $PWD && ls *apk -m1 | cut -d . -f 1-2)</code>
           🔥 Jenis File: <code>${TYPE_FILE_ANDROID}</code>
           🧨 Game Type: <code>${GAME_TYPE_ANDROID}</code>
-          🔗 Download Link: <a href=\"${LINK}\">Here</a>
+          🔗 Download Link: <a href=\"${LINK_MIRROR}\">Here</a>
           📅 Date: <code>$(date +%d\ %B\ %Y)</code>
           🕔 Time Zone: <code>$(date +%T) WIB</code>"
           TG_TEXT="${TXT_CAPTION}"
