@@ -9,7 +9,7 @@ defaults:
     shell: bash
 
 env:
-  LINK: https://mega.nz/file/JQkngZiZ#i7C9rUfsK14_Sz_T_E_e-BPznGhpFfSjsiytDYC14VY
+  LINK: https://mega.nz/file/lZIkxKhS#OzKQVo5GzMGiy0b11awKlNE6yTBRpQbt0btyRj0bdkY
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
   TG_TOKEN: ${{ secrets.TG_TOKEN }}
   TG_ID: ${{ secrets.TG_ID }}
