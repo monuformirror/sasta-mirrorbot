@@ -9,12 +9,12 @@ defaults:
     shell: bash
 
 env:
-  LINK: https://mega.nz/file/lZIkxKhS#OzKQVo5GzMGiy0b11awKlNE6yTBRpQbt0btyRj0bdkY
+  LINK: https://mega.nz/file/wwJSSbwQ#wjfm2xByNadJWm6Ek5-Bv7hfnIGFDE0u-Ej13_FYXTM
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
   TG_TOKEN: ${{ secrets.TG_TOKEN }}
   TG_ID: ${{ secrets.TG_ID }}
-  TYPE_FILE_ANDROID: apk
-  GAME_TYPE_ANDROID: Android
+  TYPE_FILE_ANDROID: 7z
+  GAME_TYPE_ANDROID: I dont now 😅
 
 jobs:
   deploy-android:
