@@ -9,12 +9,12 @@ defaults:
     shell: bash
 
 env:
-  LINK: https://mega.nz/file/wwJSSbwQ#wjfm2xByNadJWm6Ek5-Bv7hfnIGFDE0u-Ej13_FYXTM
+  LINK: https://mega.nz/file/5LtGFRSa#CagW3K-wsnBiuomGsa-PQGGldyYcc59XggBoUAqqsz8
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
   TG_TOKEN: ${{ secrets.TG_TOKEN }}
   TG_ID: ${{ secrets.TG_ID }}
-  TYPE_FILE_ANDROID: 7z
-  GAME_TYPE_ANDROID: I dont now 😅
+  TYPE_FILE_ANDROID: apk
+  GAME_TYPE_ANDROID: Summer Time Saga
 
 jobs:
   deploy-android:
@@ -41,7 +41,7 @@ jobs:
 
       - name: Link Download
         run: |
-          LINK_MIRROR=https://nfsproject.projek.workers.dev/1:/$(basename $PWD/*.${TYPE_FILE_ANDROID})
+          LINK_MIRROR=https://nfs.projek.workers.dev/0:/$(basename $PWD/*.${TYPE_FILE_ANDROID})
           export TZ=Asia/Jakarta
           telegram_message() {
                curl -s -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
