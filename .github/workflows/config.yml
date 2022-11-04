@@ -9,12 +9,12 @@ defaults:
     shell: bash
 
 env:
-  LINK: https://mega.nz/file/5LtGFRSa#CagW3K-wsnBiuomGsa-PQGGldyYcc59XggBoUAqqsz8
+  LINK: https://mega.nz/file/oC9VSLCJ#OmvHhGtylRLaxOGXizIy_47RJrUKYP_4L_aUh7PzcbU
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
   TG_TOKEN: ${{ secrets.TG_TOKEN }}
   TG_ID: ${{ secrets.TG_ID }}
   TYPE_FILE_ANDROID: apk
-  GAME_TYPE_ANDROID: Summer Time Saga
+  GAME_TYPE_ANDROID: Game Mantap Mantap
 
 jobs:
   deploy-android:
