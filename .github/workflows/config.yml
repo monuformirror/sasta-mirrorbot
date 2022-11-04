@@ -20,7 +20,7 @@ jobs:
   deploy-android:
     name: Android Mirrorer
     runs-on: ubuntu-latest
-    if: github.actor == 'NFS86'
+    if: github.actor == 'AnGgIt88'
     container:
       image: anggit86/docker:mirrorer
 
