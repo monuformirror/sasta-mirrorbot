@@ -9,11 +9,11 @@ defaults:
     shell: bash
 
 env:
-  LINK: https://mega.nz/file/oC9VSLCJ#OmvHhGtylRLaxOGXizIy_47RJrUKYP_4L_aUh7PzcbU
+  LINK: https://bigota.d.miui.com/V13.0.4.0.SKCMIXM/miui_VEUXGlobal_V13.0.4.0.SKCMIXM_6d83ad06f5_12.0.zip
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
   TG_TOKEN: ${{ secrets.TG_TOKEN }}
   TG_ID: ${{ secrets.TG_ID }}
-  TYPE_FILE_ANDROID: apk
+  TYPE_FILE_ANDROID: zip
   GAME_TYPE_ANDROID: Game Mantap Mantap
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
 
       - name: Upload
         run: |
-          rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.${TYPE_FILE_ANDROID} NFS: -P
+          rclone copy --drive-chunk-size 256M --stats 1s $PWD/*.${TYPE_FILE_ANDROID} build:/mirror/ -P
 
       - name: Link Download
         run: |
