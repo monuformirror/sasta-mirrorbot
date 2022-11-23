@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.actor == 'monuformirror'
     container:
-      image: anggit86/docker:mirrorer
+      image: anggit86/ubuntu:22.04
 
     steps:
       - uses: actions/checkout@v2
@@ -41,8 +41,8 @@ jobs:
 
       - name: Link Download
         run: |
-          LINK_MIRROR=https://nfs.projek.workers.dev/0:/$(basename $PWD/*.${TYPE_FILE_ANDROID})
-          export TZ=Asia/Jakarta
+          LINK_MIRROR=https://ci-build.monusbot.workers.dev/0:/mirror/$(basename $PWD/*.${TYPE_FILE_ANDROID})
+          export TZ=Asia/Delhi
           telegram_message() {
                curl -s -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
                -d chat_id="${TG_ID}" \
