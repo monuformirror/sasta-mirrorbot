@@ -33,7 +33,7 @@ jobs:
 
       - name: Download
         run: |
-          mega-get ${LINK} $PWD
+          wget ${LINK} $PWD
 
       - name: Upload
         run: |
