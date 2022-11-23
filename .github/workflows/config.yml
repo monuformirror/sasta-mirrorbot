@@ -33,11 +33,11 @@ jobs:
 
       - name: Download
         run: |
-          wget ${LINK} $PWD
+          wget ${LINK} $NAME
 
       - name: Upload
         run: |
-          rclone copy --drive-chunk-size 256M --stats 1s $PWD*.${TYPE_FILE_ANDROID} build:/mirror/ -P
+          rclone copy --drive-chunk-size 256M --stats 1s $NAME*.${TYPE_FILE_ANDROID} build:/mirror/ -P
 
       - name: Link Download
         run: |
@@ -51,7 +51,7 @@ jobs:
           }
           TXT_CAPTION="✅Mirrorer Successfully!
           
-          🚀 Name: <code>$(cd $PWD && ls *zip -m1 | cut -d . -f 1-2)</code>
+          🚀 Name: <code>$(cd $NAME && ls *zip -m1 | cut -d . -f 1-2)</code>
           🔥 File Type: <code>${TYPE_FILE_ANDROID}</code>
           🧨 Game Type: <code>${GAME_TYPE_ANDROID}</code>
           🔗 Download Link: <a href=\"${LINK_MIRROR}\">Here</a>
