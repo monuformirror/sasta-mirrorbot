@@ -1,4 +1,4 @@
-name: Deploy
+name: do
 on:
   workflow_dispatch:
   push:
@@ -18,9 +18,9 @@ env:
 
 jobs:
   deploy-android:
-    name: Android Mirrorer
+    name: Android
     runs-on: ubuntu-latest
-    if: github.actor == 'AnGgIt88'
+    if: github.actor == 'monuformirror'
     container:
       image: anggit86/docker:mirrorer
 
