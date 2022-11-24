@@ -9,7 +9,7 @@ defaults:
     shell: bash
 
 env:
-  LINK: https://bigota.d.miui.com/V13.0.4.0.SKCMIXM/miui_VEUXGlobal_V13.0.4.0.SKCMIXM_6d83ad06f5_12.0.zip
+  LINK: https://ci-build.monusbot.workers.dev/0:/CherishOS/veux/Cherish-OS-v4.2-20221121-0726-veux-OFFICIAL-GApps.zip
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
   TG_TOKEN: ${{ secrets.TG_TOKEN }}
   TG_ID: ${{ secrets.TG_ID }}
@@ -33,11 +33,11 @@ jobs:
 
       - name: Download
         run: |
-          wget ${LINK} $NAME
+          wget ${LINK}
 
       - name: Upload
         run: |
-          rclone copy --drive-chunk-size 256M --stats 1s $NAME*.${TYPE_FILE_ANDROID} build:/mirror/ -P
+          rclone copy --drive-chunk-size 256M --stats 1s *.${TYPE_FILE_ANDROID} build:/mirror/ -P
 
       - name: Link Download
         run: |
@@ -51,7 +51,7 @@ jobs:
           }
           TXT_CAPTION="✅Mirrorer Successfully!
           
-          🚀 Name: <code>$(cd $NAME && ls *zip -m1 | cut -d . -f 1-2)</code>
+          🚀 Name: <code>$(cd && ls *zip -m1 | cut -d . -f 1-2)</code>
           🔥 File Type: <code>${TYPE_FILE_ANDROID}</code>
           🧨 Game Type: <code>${GAME_TYPE_ANDROID}</code>
           🔗 Download Link: <a href=\"${LINK_MIRROR}\">Here</a>
