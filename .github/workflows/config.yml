@@ -9,7 +9,7 @@ defaults:
     shell: bash
 
 env:
-  LINK: https://sourceforge.net/projects/realme-rmx1805/files/OxygenOS/OxygenOS_RMX1805_MclarenEdition%28stable%29.zip/download
+  LINK: https://csbot-mirror.csbotmirror.workers.dev/0:/Kantara%20-%20A%20Legend%20%282022%29%20720p%20AMZN%20WEB-DL%20%5BKannada%20%28AAC%202.0%20-%20128Kbps%29%5D%20H265%20ESubs%20-SKUI.mkv
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
   TG_TOKEN: ${{ secrets.TG_TOKEN }}
   TG_ID: ${{ secrets.TG_ID }}
