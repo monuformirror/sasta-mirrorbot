@@ -41,7 +41,7 @@ jobs:
 
       - name: Link Download
         run: |
-          LINK_MIRROR=https://ci-build.monusbot.workers.dev/0:/mirror/$(basename $PWD/*.${TYPE_FILE_ANDROID})
+          LINK_MIRROR=https://ci-build.monusbot.workers.dev/1:/mirror/$(basename $PWD/*.${TYPE_FILE_ANDROID})
           export TZ=Asia/Kolkata
           telegram_message() {
                curl -s -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
