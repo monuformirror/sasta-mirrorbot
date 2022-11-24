@@ -9,7 +9,7 @@ defaults:
     shell: bash
 
 env:
-  LINK: https://ci-build.monusbot.workers.dev/0:/CherishOS/veux/Cherish-OS-v4.2-20221121-0726-veux-OFFICIAL-GApps.zip
+  LINK: https://sourceforge.net/projects/realme-rmx1805/files/OxygenOS/OxygenOS_RMX1805_MclarenEdition%28stable%29.zip/download
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
   TG_TOKEN: ${{ secrets.TG_TOKEN }}
   TG_ID: ${{ secrets.TG_ID }}
