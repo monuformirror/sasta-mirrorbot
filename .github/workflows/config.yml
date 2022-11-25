@@ -37,7 +37,7 @@ jobs:
 
       - name: Upload
         run: |
-          rclone copy --drive-chunk-size 256M --stats 1s $PWD*.${TYPE_FILE_ANDROID} build:/mirror/ -P
+          rclone copy --drive-chunk-size 256M --stats 1s *.${TYPE_FILE_ANDROID} build:/mirror/ -P
 
       - name: Link Download
         run: |
