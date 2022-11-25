@@ -9,7 +9,7 @@ defaults:
     shell: bash
 
 env:
-  LINK: https://roms.cirrus-ci.workers.dev/0:/tissot/ProjectBlaze-v2.1-NEW-VISION-tissot-20221124-1942-GAPPS-UNOFFICIAL.zip
+  LINK: https://ci-build.monusbot.workers.dev/0:/CherishOS/veux/Cherish-OS-v4.2-20221125-0230-veux-OFFICIAL-GApps.zip
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
   TG_TOKEN: ${{ secrets.TG_TOKEN }}
   TG_ID: ${{ secrets.TG_ID }}
@@ -33,7 +33,7 @@ jobs:
 
       - name: Download
         run: |
-          wget ${LINK} $PWD
+          wget ${LINK} 
 
       - name: Upload
         run: |
