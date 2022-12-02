@@ -9,7 +9,7 @@ defaults:
     shell: bash
 
 env:
-  LINK: https://cherish.monu-builds.workers.dev/0:/CherishOS/veux/Cherish-OS-v4.2-20221130-1451-veux-OFFICIAL-GApps.zip
+  LINK: https://sourceforge.net/projects/ashish-builds/files/Veux-TestBuilds/evolution_veux-ota-td1a.221105.001-12021320.zip/download
   RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
   TG_TOKEN: ${{ secrets.TG_TOKEN }}
   TG_ID: ${{ secrets.TG_ID }}
